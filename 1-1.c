@@ -4,7 +4,7 @@
 
 int main(void)
 {
-    printf("15から37を引くと%dです。\n", 15 - 37);
+    printf("%d\n", 15 - 37);
 
     return 0;
 }
