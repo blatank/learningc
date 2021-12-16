@@ -16,7 +16,7 @@ int main(void)
     scanf("%d", &h);
 
     /* 台形の面積 = (上辺 + 下辺) * 高さ / 2 */
-    printf("面積は%lfです。\n", (a + b) * h / 2.0);
+    printf("面積は%fです。\n", (a + b) * h / 2.0);
 
     return 0;
 }

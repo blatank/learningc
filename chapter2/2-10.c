@@ -13,6 +13,6 @@ int main(void)
     printf("整数b：");
     scanf("%d", &b);
 
-    printf("aの値はbの%lf%%です。\n", (double)a / (double)b * 100.0);
+    printf("aの値はbの%f%%です。\n", (double)a / (double)b * 100.0);
     return 0;
 }

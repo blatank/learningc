@@ -12,7 +12,7 @@ int main(void)
     printf("実数b：");
     scanf("%lf", &b);
 
-    printf("aの値はbの値の%lf%%です。\n", a / b * 100);
+    printf("aの値はbの値の%f%%です。\n", a / b * 100);
 
     return 0;
 }

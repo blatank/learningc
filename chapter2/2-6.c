@@ -10,7 +10,7 @@ int main(void)
     printf("実数を入力して下さい：");
     scanf("%lf", &x);
 
-    printf("あなたは%lfと入力しましたね。\n", x);
+    printf("あなたは%fと入力しましたね。\n", x);
 
     return 0;
 }
