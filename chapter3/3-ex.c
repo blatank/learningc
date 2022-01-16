@@ -1,11 +1,11 @@
 /*
-    読み込んだ4つの整数値の最大値を求めて表示
+    読み込んだ4つの整数値の最小値を求めて表示
 */
 #include <stdio.h>
 
 int main(void)
 {
-    int n1, n2, n3, n4, max;
+    int n1, n2, n3, n4;
 
     puts("4つの整数値を入力して下さい。");
     printf("整数1：");
