@@ -6,20 +6,21 @@
 int main(void)
 {
     /* 入力 */
-    float working_time;     /* 総労働時間[h] */
-    float paid_rest_time;   /* 有給休暇[h] */
-    int   month_days;       /* 月の日数[日] */
-    int   req_days;         /* 要出勤日数[日] */
+    float working_time;         /* 総労働時間[h] */
+    float paid_rest_time;       /* 有給休暇[h] */
+    float holiday_work_in_law;  /* 法定休出時間[h] */
+    int   month_days;           /* 月の日数[日] */
+    int   req_days;             /* 要出勤日数[日] */
 
     /* work */
-    float limit36_time;     /* 36下限[h] */
-    float req_limit_time;   /* 要出勤日数から求めた要勤務時間[h] */
-    float flex_limit;       /* フレックス下限[h] */
-    float act_working_time; /* 実労働時間[h] */
+    float limit36_time;         /* 36下限[h] */
+    float req_limit_time;       /* 要出勤日数から求めた要勤務時間[h] */
+    float flex_limit;           /* フレックス下限[h] */
+    float act_working_time;     /* 実労働時間[h] */
 
     /* 出力 */
-    float overtime_over;    /* 法定超残業時間[h] */
-    float overtime_inner;   /* 法定内労働時間[h] */
+    float overtime_over;        /* 法定超残業時間[h] */
+    float overtime_inner;       /* 法定内労働時間[h] */
 
     /* 入力 */
     printf("総労働時間[h]：");
@@ -27,6 +28,9 @@ int main(void)
 
     printf("有給休暇[h]：");
     scanf("%f", &paid_rest_time);
+
+    printf("法定休出[h]");
+    scanf("%f", &holiday_work_in_law);
 
     printf("月の日数[日]：");
     scanf("%d", &month_days);
@@ -54,17 +58,15 @@ int main(void)
     act_working_time = working_time + paid_rest_time;
 
     /* 法定超残業時間[h] */
-    /* 実労働時間 - (法定超残業時間 + フレックス下限) >= 0 */
     if (working_time > flex_limit) {
-        overtime_over = working_time - flex_limit;
+        overtime_over = working_time - flex_limit - holiday_work_in_law;
     }
     else {
         overtime_over = 0.0;
     }
 
     /* 法定内残業時間[h] */
-    /* 実労働時間 - (法定超残業時間 + フレックス下限) >= 0 */
-    overtime_inner = act_working_time - (overtime_over + flex_limit);
+    overtime_inner = act_working_time - working_time;
     if (overtime_inner < 0.0) {
         overtime_inner = 0.0;
     }
