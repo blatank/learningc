@@ -29,7 +29,7 @@ int main(void)
     printf("有給休暇[h]：");
     scanf("%f", &paid_rest_time);
 
-    printf("法定休出[h]");
+    printf("法定休出[h]：");
     scanf("%f", &holiday_work_in_law);
 
     printf("月の日数[日]：");
@@ -66,7 +66,7 @@ int main(void)
     }
 
     /* 法定内残業時間[h] */
-    overtime_inner = act_working_time - working_time;
+    overtime_inner = act_working_time - flex_limit - overtime_over - holiday_work_in_law;
     if (overtime_inner < 0.0) {
         overtime_inner = 0.0;
     }
