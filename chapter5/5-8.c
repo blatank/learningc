@@ -43,7 +43,7 @@ int main(void)
         do {
             scanf("%d", &tensu[i]);
             
-            if (   (tensu[i] <= 0)              /* 無効な人数 */
+            if (   (tensu[i] < 0)               /* 無効な点数 */
                 || (tensu[i] > TENSU_MAX)) {    /* TENSU_MAX点より上はありません */
                 /* 警告鳴らして再入力を促す */
                 printf("\a[error]点数は1〜%dの間で入力ください。：", TENSU_MAX);
