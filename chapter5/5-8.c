@@ -46,7 +46,7 @@ int main(void)
             if (   (tensu[i] < 0)               /* 無効な点数 */
                 || (tensu[i] > TENSU_MAX)) {    /* TENSU_MAX点より上はありません */
                 /* 警告鳴らして再入力を促す */
-                printf("\a[error]点数は1〜%dの間で入力ください。：", TENSU_MAX);
+                printf("\a[error]点数は0〜%dの間で入力ください。：", TENSU_MAX);
                 num_check = 0;
             }
             else {
