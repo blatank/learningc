@@ -4,6 +4,7 @@
 #include <stdio.h>
 
 #define STUDENT_MAX     (80)                        /* 最大の学生数 */
+#define TENSU_MIN       (0)                         /* 点数の最小値 */
 #define TENSU_MAX       (100)                       /* 点数の最大値 */
 #define DIVISION        (10)                        /* 分布点数(TENSU_MAXから割り切れる数にすること) */
 #define BUNPU_ARRAY_NUM ((TENSU_MAX/DIVISION)+1)    /* 分布配列数(+1はTENSU_MAX点の分) */
@@ -43,10 +44,10 @@ int main(void)
         do {
             scanf("%d", &tensu[i]);
             
-            if (   (tensu[i] < 0)               /* 無効な点数 */
+            if (   (tensu[i] < TENSU_MIN)       /* 無効な点数 */
                 || (tensu[i] > TENSU_MAX)) {    /* TENSU_MAX点より上はありません */
                 /* 警告鳴らして再入力を促す */
-                printf("\a[error]点数は0〜%dの間で入力ください。：", TENSU_MAX);
+                printf("\a[error]点数は%d〜%dの間で入力ください。：", TENSU_MIN, TENSU_MAX);
                 num_check = 0;
             }
             else {
